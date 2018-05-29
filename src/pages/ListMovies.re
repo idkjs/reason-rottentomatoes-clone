@@ -22,6 +22,7 @@ let make = _children => {
       ...(
            ({result}) =>
              <div>
+               <Nav />
                <h3 className="text-center">
                  ("Latest Rotten Movie Ratings!" |> ste)
                </h3>
