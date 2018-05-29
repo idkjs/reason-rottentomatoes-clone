@@ -36,42 +36,49 @@ let make = (~id, _children) => {
                  let description = Some(movie##description);
                  let imageUrl = Some(movie##imageUrl);
                  let avgRating = Some(movie##avgRating);
-                 switch (id, description, imageUrl, avgRating) {
-                 | (
-                     Some(id),
-                     Some(description),
-                     Some(imageUrl),
-                     Some(avgRating),
-                   ) =>
-                   description
-                   ++ " - "
-                   ++ imageUrl
-                   ++ " - "
-                   ++ string_of_int(avgRating)
-                   |> Utils.ste
-                 | (Some(imageUrl), None, None, None) =>
-                   imageUrl |> Utils.ste
-                 | (None, Some(description), None, None) =>
-                   description |> Utils.ste
-                 | (None, None, None, Some(avgRating)) =>
-                   string_of_int(avgRating) |> Utils.ste
-                 | (None, None, None, None) =>
-                   "Error retrieving film" |> Utils.ste
-                 };
                  <div className="pa3 bg-black-05 ma3">
-                   /* <div style=Css.(
-                      ReactDOMRe.Style.make(
-                        ~backgroundImage="url(" ++ movie##imageUrl ++ ")",
-                        ~backgroundSize=(cover),
-                        (),
-                        )
-                      ) />
-                      <div> */
 
                      <h3 className="text-center">
                        ("Latest Rotten Movie Ratings!" |> Utils.ste)
                      </h3>
+                     (
+                       switch (id, description, imageUrl, avgRating) {
+                       | (
+                           Some(id),
+                           Some(description),
+                           Some(imageUrl),
+                           Some(avgRating),
+                         ) =>
+                         description
+                         ++ " - "
+                         ++ imageUrl
+                         ++ " - "
+                         ++ string_of_int(avgRating)
+                         |> Utils.ste
+                       | (Some(imageUrl), None, None, None) =>
+                         imageUrl |> Utils.ste
+                       | (None, Some(description), None, None) =>
+                         description |> Utils.ste
+                       | (None, None, None, Some(avgRating)) =>
+                         string_of_int(avgRating) |> Utils.ste
+                       | (None, None, None, None) =>
+                         "Error retrieving film" |> Utils.ste
+                       }
+                     )
                    </div>;
+                   /* <div className="pa3 bg-black-05 ma3">
+                      /* <div style=Css.(
+                         ReactDOMRe.Style.make(
+                           ~backgroundImage="url(" ++ movie##imageUrl ++ ")",
+                           ~backgroundSize=(cover),
+                           (),
+                           )
+                         ) />
+                         <div> */
+
+                        <h3 className="text-center">
+                          ("Latest Rotten Movie Ratings!" |> Utils.ste)
+                        </h3> */
                /* <div className="movie">
                     <h3><span className="movie-title"> ("Movie Title:"|> Utils.ste) </span> (movie##description ++ {js|&nbsp;|js} |> Utils.ste) </h3>
                     <h2>
