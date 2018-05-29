@@ -71,35 +71,59 @@ let make = (~id, _children) => {
                  Js.log2("img", imageUrl);
                  let avgRating = Some(movie##avgRating);
                  <div className="pa3 bg-black-05 ma3">
-                   <div className=(Styles.background(imageUrl |? "")) />
-                   <h3 className="text-center">
-                     ("Latest Rotten Movie Ratings!" |> Utils.ste)
-                   </h3>
-                   (
-                     switch (id, description, imageUrl, avgRating) {
-                     | (
-                         Some(id),
-                         Some(description),
-                         Some(imageUrl),
-                         Some(avgRating),
-                       ) =>
-                       description
-                       ++ " - "
-                       ++ imageUrl
-                       ++ " - "
-                       ++ string_of_int(avgRating)
-                       |> Utils.ste
-                     | (Some(imageUrl), None, None, None) =>
-                       imageUrl |> Utils.ste
-                     | (None, Some(description), None, None) =>
-                       description |> Utils.ste
-                     | (None, None, None, Some(avgRating)) =>
-                       string_of_int(avgRating) |> Utils.ste
-                     | (None, None, None, None) =>
-                       "Error retrieving film" |> Utils.ste
-                     }
-                   )
-                 </div>;
+
+                     <div className=(Styles.background(imageUrl |? "")) />
+                     <h3 className="text-center">
+                       ("Latest Rotten Movie Ratings!" |> Utils.ste)
+                     </h3>
+                     <div>
+                       <div className="movie">
+
+                           <h3>
+                             <span className="movie-title">
+                               ("Movie Title:" |> Utils.ste)
+                             </span>
+                             (description |? "" |> Utils.ste)
+                           </h3>
+                           /* {j|&nbsp;|j} */
+                           <h2>
+                             <span className="movie-title">
+                               ("Rating:" |> Utils.ste)
+                             </span>
+                             (avgRating |? 0 |> string_of_int |> Utils.ste)
+                           </h2>
+                         </div>
+                         /* (
+                              (avgRating |? 0 |> string_of_int)
+                              ++ {js|&nbsp;|js}
+                              |> Utils.ste
+                            ) */
+                     </div>
+                   </div>;
+                   /* (
+                        switch (id, description, imageUrl, avgRating) {
+                        | (
+                            Some(id),
+                            Some(description),
+                            Some(imageUrl),
+                            Some(avgRating),
+                          ) =>
+                          description
+                          ++ " - "
+                          ++ imageUrl
+                          ++ " - "
+                          ++ string_of_int(avgRating)
+                          |> Utils.ste
+                        | (Some(imageUrl), None, None, None) =>
+                          imageUrl |> Utils.ste
+                        | (None, Some(description), None, None) =>
+                          description |> Utils.ste
+                        | (None, None, None, Some(avgRating)) =>
+                          string_of_int(avgRating) |> Utils.ste
+                        | (None, None, None, None) =>
+                          "Error retrieving film" |> Utils.ste
+                        }
+                      ) */
                /*       <div className='pa3 bg-black-05 ma3'>
                           <div
                             style={{
