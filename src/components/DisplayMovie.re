@@ -48,11 +48,15 @@ let make = (~id, _children) => {
                    ++ imageUrl
                    ++ " - "
                    ++ string_of_int(avgRating)
-                 | (Some(imageUrl), None, None, None) => imageUrl
-                 | (None, Some(description), None, None) => description
+                   |> Utils.ste
+                 | (Some(imageUrl), None, None, None) =>
+                   imageUrl |> Utils.ste
+                 | (None, Some(description), None, None) =>
+                   description |> Utils.ste
                  | (None, None, None, Some(avgRating)) =>
-                   string_of_int(avgRating)
-                 | (None, None, None, None) => "Error retrieving film"
+                   string_of_int(avgRating) |> Utils.ste
+                 | (None, None, None, None) =>
+                   "Error retrieving film" |> Utils.ste
                  };
                  <div className="pa3 bg-black-05 ma3">
                    /* <div style=Css.(
