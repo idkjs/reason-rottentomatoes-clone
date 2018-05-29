@@ -20,8 +20,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "watch": "bsb -make-world -w",
     "test": "react-scripts test --env=jsdom",
-    "get-schema": "yarn send-introspection-query https://api.graph.cool/simple/v1/cj9o4se940gsu0148s5a4helr",
+    "get-schema":
+      "yarn send-introspection-query https://api.graph.cool/simple/v1/cj4j8xezmtdvv0130l95q2gkk",
     "eject": "react-scripts eject"
   },
   "devDependencies": {

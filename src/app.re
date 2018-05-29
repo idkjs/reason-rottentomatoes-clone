@@ -17,5 +17,6 @@ let make = (~message, _children) => {
         <code> (ReasonReact.string(" src/App.re ")) </code>
         (ReasonReact.string("and save to reload."))
       </p>
+      <ListMovies />
     </div>,
 };

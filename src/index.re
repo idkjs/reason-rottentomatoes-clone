@@ -4,7 +4,9 @@
 external register_service_worker : unit => unit = "default";
 
 ReactDOMRe.renderToElementWithId(
-  <App message="ReasonReact Graphql MoviesDB" />,
+  <ReasonApollo.Provider client=Client.instance>
+    <App message="ReasonReact Graphql MoviesDB" />
+  </ReasonApollo.Provider>,
   "root",
 );
 
