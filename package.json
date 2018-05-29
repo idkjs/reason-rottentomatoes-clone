@@ -1,7 +1,18 @@
 {
-  "name": "re-movies",
+  "name": "reason-rottentomatoes-clone",
   "version": "0.1.0",
   "private": true,
+  "keywords": [
+    "reason",
+    "reason-react",
+    "bucklescript",
+    "None/Some",
+    "Rotten Tomatoes",
+    "authO",
+    "reason-apollo",
+    "reason-react",
+    "graphql"
+  ],
   "dependencies": {
     "apollo-cache-inmemory": "^1.2.1",
     "apollo-client": "^2.3.1",
@@ -24,7 +35,8 @@
     "build": "react-scripts build",
     "watch": "bsb -make-world -w",
     "test": "react-scripts test --env=jsdom",
-    "get-schema": "yarn send-introspection-query https://api.graph.cool/simple/v1/cj4j8xezmtdvv0130l95q2gkk",
+    "get-schema":
+      "yarn send-introspection-query https://api.graph.cool/simple/v1/cj4j8xezmtdvv0130l95q2gkk",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
