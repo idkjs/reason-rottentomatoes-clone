@@ -19,10 +19,21 @@
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+navbar-right { margin-right: 0px !important}
+.log {
+  margin: 5px 20px 0 0;
+}
+
+.movie-title{
+  font-size: 19px;
+  font-family: Courier New;
+
+}
+
+.movie{
+  margin-top: 5px;
 }

@@ -1,11 +1,17 @@
 {
   "name": "reason-scripts",
-  "sources": ["src"],
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    }
+  ],
   "bs-dependencies": [
     "reason-react",
     "@glennsl/bs-jest",
     "reason-apollo",
-    "bs-fetch"
+    "bs-fetch",
+    "bs-css"
   ],
   "reason": {
     "react-jsx": 2
@@ -16,5 +22,7 @@
     "in-source": true
   },
   "suffix": ".bs.js",
-  "ppx-flags": ["graphql_ppx/ppx"]
+  "ppx-flags": [
+    "graphql_ppx/ppx"
+  ]
 }

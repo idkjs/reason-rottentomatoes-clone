@@ -9,6 +9,7 @@
     "apollo-link-context": "^1.0.8",
     "apollo-link-error": "^1.0.9",
     "apollo-link-http": "^1.5.4",
+    "bs-css": "^6.7.0",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.9.2",
     "react": "^16.4.0",
@@ -22,8 +23,7 @@
     "build": "react-scripts build",
     "watch": "bsb -make-world -w",
     "test": "react-scripts test --env=jsdom",
-    "get-schema":
-      "yarn send-introspection-query https://api.graph.cool/simple/v1/cj4j8xezmtdvv0130l95q2gkk",
+    "get-schema": "yarn send-introspection-query https://api.graph.cool/simple/v1/cj4j8xezmtdvv0130l95q2gkk",
     "eject": "react-scripts eject"
   },
   "devDependencies": {

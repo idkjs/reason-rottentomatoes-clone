@@ -22,7 +22,10 @@ let make = _children => {
       ...(
            ({result}) =>
              <div>
-               <h1> ("Movies: " |> ste) </h1>
+               <h3 className="text-center">
+                 ("Latest Rotten Movie Ratings!" |> ste)
+               </h3>
+               <hr />
                (
                  switch (result) {
                  | Error(e) =>
@@ -31,16 +34,18 @@ let make = _children => {
                  | Loading => "Loading" |> ste
                  | Data(response) =>
                    Js.log(response##allMovies);
-                   /* let listPeople = response##listPeople;
-                      let items = response##listPeople##items;
-                      Js.log(items); */
-
-                   /* let parsedItems = parseItems(listPeople);
-                      Js.log(parsedItems); */
-                   <div>
-                     <h1>
-                       (ReasonReact.string("ReasonReact Graphql MoviesDB"))
-                     </h1>
+                   let movies = response##allMovies;
+                   <div className="col-sm-12">
+                     (
+                       response##allMovies
+                       |> Array.mapi((index, movie) =>
+                            <DisplayMovie
+                              key=(index |> string_of_int)
+                              id=movie##id
+                            />
+                          )
+                       |> ReasonReact.array
+                     )
                    </div>;
                  }
                )
