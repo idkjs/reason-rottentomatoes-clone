@@ -83,50 +83,6 @@ let make = (~id, _children) => {
                      </div>
                    </div>
                  </div>;
-               /* (
-                    (avgRating |? 0 |> string_of_int)
-                    ++ {js|&nbsp;|js}
-                    |> Utils.ste
-                  ) */
-               /* (
-                    switch (id, description, imageUrl, avgRating) {
-                    | (
-                        Some(id),
-                        Some(description),
-                        Some(imageUrl),
-                        Some(avgRating),
-                      ) =>
-                      description
-                      ++ " - "
-                      ++ imageUrl
-                      ++ " - "
-                      ++ string_of_int(avgRating)
-                      |> Utils.ste
-                    | (Some(imageUrl), None, None, None) =>
-                      imageUrl |> Utils.ste
-                    | (None, Some(description), None, None) =>
-                      description |> Utils.ste
-                    | (None, None, None, Some(avgRating)) =>
-                      string_of_int(avgRating) |> Utils.ste
-                    | (None, None, None, None) =>
-                      "Error retrieving film" |> Utils.ste
-                    }
-                  ) */
-               /*       <div className='pa3 bg-black-05 ma3'>
-                          <div
-                            style={{
-                              backgroundImage: `url(${this.props.movie.imageUrl})`,
-                              backgroundSize: 'cover',
-                              paddingBottom: '100%',
-                            }}
-                          />
-                          <div>
-                            <div className='movie'>
-                              <h3><span className='movie-title'>Movie Title: </span> {this.props.movie.description}&nbsp; </h3>
-                              <h2><span className='movie-title'>Rating: </span> { this.props.movie.avgRating }% </h2>
-                            </div>
-                          </div>
-                        </div> */
                }
              }
          )
