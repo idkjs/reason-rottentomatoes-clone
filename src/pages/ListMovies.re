@@ -36,19 +36,22 @@ let make = _children => {
                    Js.log(response##allMovies);
                    let movies = response##allMovies;
                    <div className="col-sm-12">
-                     <div className="col-sm-4">
+                     /* <div className="col-sm-4"> */
+
                        (
                          movies
                          |> Array.mapi((index, movie) =>
-                              <DisplayMovie
-                                key=(index |> string_of_int)
-                                id=movie##id
-                              />
+                              <div className="col-sm-4">
+                                <DisplayMovie
+                                  key=(index |> string_of_int)
+                                  id=movie##id
+                                />
+                              </div>
                             )
                          |> ReasonReact.array
                        )
-                     </div>
-                   </div>;
+                     </div>;
+                     /* </div> */
                  }
                )
              </div>
