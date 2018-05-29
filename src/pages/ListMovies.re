@@ -36,16 +36,18 @@ let make = _children => {
                    Js.log(response##allMovies);
                    let movies = response##allMovies;
                    <div className="col-sm-12">
-                     (
-                       response##allMovies
-                       |> Array.mapi((index, movie) =>
-                            <DisplayMovie
-                              key=(index |> string_of_int)
-                              id=movie##id
-                            />
-                          )
-                       |> ReasonReact.array
-                     )
+                     <div className="col-sm-4">
+                       (
+                         movies
+                         |> Array.mapi((index, movie) =>
+                              <DisplayMovie
+                                key=(index |> string_of_int)
+                                id=movie##id
+                              />
+                            )
+                         |> ReasonReact.array
+                       )
+                     </div>
                    </div>;
                  }
                )
@@ -53,3 +55,17 @@ let make = _children => {
          )
     </GetAllMoviesQuery>,
 };
+/*
+       <div>
+         <Nav />
+         <h3 className="text-center"> Latest Rotten Movie Ratings!</h3>
+         <hr/>
+         <div className="col-sm-12">
+           {this.props.data.allMovies.map((movie, index) => (
+             <div className="col-sm-4" key={index}>
+               <DisplayMovie key={movie.id} movie={movie} refresh={() => this.props.data.refetch()} />
+             </div>
+           ))}
+         </div>
+       </div>
+ */
